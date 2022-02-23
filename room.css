@@ -1,0 +1,53 @@
+.body-background{
+    text-align: center;
+    background-image: url("https://us.123rf.com/450wm/hobbitfoot/hobbitfoot1709/hobbitfoot170901831/86446397-scene-cinema-background-art-performance-on-stage-vector-illustration.jpg?ver=6");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-width: 1000px;
+    min-height: 750px;
+}
+.heading{
+    width: 440px;
+    font-family: 'Rye', cursive;
+    font-size: 35px;
+    margin-top: 80px;
+    color: white;
+    background: linear-gradient(orange 0%, orangered 50%, orange 100%);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+#status_btn{
+    width: 275px;
+    font-size: 17.5px;
+}
+#result_btn{
+    width: 610px;
+    font-size: 16px;
+}
+canvas{
+    border-radius: 15px;
+    border: 2px solid white;
+}
+#back{
+    float: right;
+    margin-top: none;
+    background-color: rgb(44, 44, 44);
+    color: white;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    font-size: 17px;
+    border-radius: 15px;
+    border: 2px solid white;
+    transition: transform 250ms ease-in-out;
+    width: 165px;
+}
+#back:active{
+    transform: scale(0.9);
+}
+#back:hover{
+    background-color: black;
+}

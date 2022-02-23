@@ -1,0 +1,58 @@
+.body-background{
+    text-align: center;
+    background-image: url("https://us.123rf.com/450wm/hobbitfoot/hobbitfoot1709/hobbitfoot170901831/86446397-scene-cinema-background-art-performance-on-stage-vector-illustration.jpg?ver=6");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-width: 1000px;
+    min-height: 750px;
+}
+.heading{
+    width: 440px;
+    font-family: 'Rye', cursive;
+    font-size: 35px;
+    margin-top: 100px;
+    color: white;
+    background: linear-gradient(orange 0%, orangered 50%, orange 100%);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.btn-redirect{
+    width: 370px;
+    background: linear-gradient(rgb(248, 165, 248) 0%, rgb(144, 107, 248) 100%);
+    font-size: 20px;
+    border: 0px solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, 0.5);
+    outline-offset: 0px;
+    text-shadow: none;
+    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+    margin-top: 10px;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: 600;
+}
+.btn-redirect:hover{
+    border: 1px solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+}
+.btn-redirect:active {
+    background: blue;
+    border-color: white;
+    color: white;
+    box-shadow: none;
+    outline-offset: none;
+    outline: none;
+}
+.btn-redirect:focus, .btn-redirect:active:focus {
+    background: blue;
+    border-color: white;
+    color: white;
+    outline-offset: none;
+    outline: none;
+}

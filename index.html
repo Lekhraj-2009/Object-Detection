@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Object Detection with CocoSSD</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+        <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+        
+        <!--Imported Fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+        <!--Imported Fonts-->
+        
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body class="body-background">
+        <center>
+            <h1 class="heading">
+                OBJECT DETECTION
+                <br>
+                With CocoSSD
+            </h1>
+            <br><br>
+            <button class="btn-redirect" onclick="screen1()" id="btn-1">LIVING ROOM</button>
+            <br><br>
+            <button class="btn-redirect" onclick="screen2()" id="btn-2">GARDEN / PARK</button>
+            <br><br>
+            <button class="btn-redirect" onclick="screen3()" id="btn-3">BUSY STREET</button>
+            <br><br>
+            <button class="btn-redirect" onclick="screen4()" id="btn-4">STUDY TABLE</button>
+            <br><br>
+            <button class="btn-redirect" onclick="screen5()" id="btn-5">FRUIT BASKET</button>
+            <br><br>
+        </center>
+
+        <!--JS File Link-->
+        <script src="main.js"></script>
+    </body>
+</html>
