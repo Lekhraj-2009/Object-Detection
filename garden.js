@@ -1,4 +1,5 @@
 garden = "";
+status = "";
 
 function preload(){
     garden = loadImage("https://i.postimg.cc/3xY1PGFT/Garden.jpg");
@@ -6,9 +7,24 @@ function preload(){
 
 function setup(){
     canvas = createCanvas(500, 335);
+
+    objectDetector = ml5.objectDetector('cocossd', modelLoaded);
     
     document.getElementById("result").innerHTML = "";
     document.getElementById("status").innerHTML = "Detecting Objects";
+}
+
+function modelLoaded(){
+    console.log("CocoSSD Model Loaded Successfully!");
+    status = true;
+    objectDetector.detect(garden, gotResults);
+}
+
+function gotResults(error, results){
+    if(error){
+        console.error(error);
+    }
+    console.log(results);
 }
 
 function draw(){

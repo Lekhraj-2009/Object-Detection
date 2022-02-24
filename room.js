@@ -1,4 +1,5 @@
 living_room = "";
+status = "";
 
 function preload(){
     living_room = loadImage("https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHw%3D&w=1000&q=80");
@@ -6,9 +7,24 @@ function preload(){
 
 function setup(){
     canvas = createCanvas(500, 335);
+
+    objectDetector = ml5.objectDetector('cocossd', modelLoaded);
     
     document.getElementById("result").innerHTML = "";
     document.getElementById("status").innerHTML = "Detecting Objects";
+}
+
+function modelLoaded(){
+    console.log("CocoSSD Model Loaded Successfully!");
+    status = true;
+    objectDetector.detect(living_room, gotResults);
+}
+
+function gotResults(error, results){
+    if(error){
+        console.error(error);
+    }
+    console.log(results);
 }
 
 function draw(){
