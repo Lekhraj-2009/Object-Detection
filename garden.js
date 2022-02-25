@@ -1,5 +1,6 @@
 garden = "";
 status = "";
+objects = [];
 
 function preload(){
     garden = loadImage("https://i.postimg.cc/3xY1PGFT/Garden.jpg");
@@ -25,44 +26,25 @@ function gotResults(error, results){
         console.error(error);
     }
     console.log(results);
+    objects = results;
 }
 
 function draw(){
     image(garden, 0, 0, 500, 335);
-    textSize(17);
-
-    fill("#FF0000");
-    text("Tree", 350, 45);
-    noFill();
-    stroke("#FF0000");
-    rect(345, 30, 120, 180);
-
-    fill("#FF0000");
-    text("Tree", 7, 22.5);
-    noFill();
-    stroke("#FF0000");
-    rect(3, 7.5, 285, 180);
-
-    fill("#FF0000");
-    text("Slide", 265, 160);
-    noFill();
-    stroke("#FF0000");
-    rect(260, 145, 80, 120);
-
-    fill("#FF0000");
-    text("Slide", 75, 165);
-    noFill();
-    stroke("#FF0000");
-    rect(70, 150, 80, 120);
-
-    fill("#FF0000");
-    text("Plant", 6, 260);
-    noFill();
-    stroke("#FF0000");
-    rect(1, 245, 80, 90);
-
-    document.getElementById("status").innerHTML = "Objects Detected";
-    document.getElementById("result").innerHTML = "There are 6 big objects in the image. CocoSSD has detected 5 objects.";
+    
+    if (status != ""){
+        for(i=0; i<objects.length; i++){
+            document.getElementById("status").innerHTML = "Objects Detected";
+            fill("#FF0000");
+            textSize(17);
+            percent = floor(objects[i].confidence*100);
+            text(objects[i].label+" "+percent+"%", objects[i].x, objects[i].y);
+            noFill();
+            stroke("#FF0000");
+            rect(objects[i].x, objects[i].y, objects[i].width, objects[i].height);
+        }
+        document.getElementById("result").innerHTML = "There are 6 big objects in the image. CocoSSD has detected "+i+" objects.";
+    }
 }
 
 function back(){

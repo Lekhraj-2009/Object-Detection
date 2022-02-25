@@ -1,5 +1,6 @@
 living_room = "";
 status = "";
+objects = [];
 
 function preload(){
     living_room = loadImage("https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHw%3D&w=1000&q=80");
@@ -25,44 +26,25 @@ function gotResults(error, results){
         console.error(error);
     }
     console.log(results);
+    objects = results;
 }
 
 function draw(){
     image(living_room, 0, 0, 500, 335);
-    textSize(17);
 
-    fill("#FF0000");
-    text("Sofa", 5, 205);
-    noFill();
-    stroke("#FF0000");
-    rect(0, 190, 270, 120);
-
-    fill("#FF0000");
-    text("Table", 165, 260);
-    noFill();
-    stroke("#FF0000");
-    rect(160, 245, 150, 120);
-
-    fill("#FF0000");
-    text("Plant", 412.5, 55);
-    noFill();
-    stroke("#FF0000");
-    rect(407.5, 40, 90, 240);
-
-    fill("#FF0000");
-    text("Chair", 300, 200);
-    noFill();
-    stroke("#FF0000");
-    rect(295, 185, 100, 100);
-
-    fill("#FF0000");
-    text("Frame", 35, 75);
-    noFill();
-    stroke("#FF0000");
-    rect(30, 60, 165, 120);
-
-    document.getElementById("status").innerHTML = "Objects Detected";
-    document.getElementById("result").innerHTML = "There are 7 big objects in the image. CocoSSD has detected 5 objects.";
+    if (status != ""){
+        for(i=0; i<objects.length; i++){
+            document.getElementById("status").innerHTML = "Objects Detected";
+            fill("#FF0000");
+            textSize(17);
+            percent = floor(objects[i].confidence*100);
+            text(objects[i].label+" "+percent+"%", objects[i].x, objects[i].y);
+            noFill();
+            stroke("#FF0000");
+            rect(objects[i].x, objects[i].y, objects[i].width, objects[i].height);
+        }
+        document.getElementById("result").innerHTML = "There are 7 big objects in the image. CocoSSD has detected "+i+" objects.";
+    }
 }
 
 function back(){
